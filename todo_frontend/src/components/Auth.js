@@ -4,14 +4,13 @@ import Register from "./auth/Register";
 import Layout from "./Layout";
 import useAuth from "../custom_hooks/useAuth";
 import { useNavigate } from "react-router-dom";
-import styles from "./auth.module.css";
 
 function Auth() {
   const [isRegister, setIsRegister] = useState(true);
 
   const toggleHandler = () => {
-    setIsRegister(!isRegister)
-  }
+    setIsRegister(!isRegister);
+  };
 
   const { auth } = useAuth();
   const navigate = useNavigate();

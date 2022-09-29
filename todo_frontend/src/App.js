@@ -19,11 +19,11 @@ function App() {
         }}
       />
       <Routes>
+        <Route path="/auth" element={<Auth />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/" element={<Home />} />
           <Route path="/edit-profile" element={<EditProfile />} />
         </Route>
-        <Route path="/auth" element={<Auth />} />
       </Routes>
     </Router>
   );
