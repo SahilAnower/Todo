@@ -16,14 +16,14 @@ function ForgetPassword({ changeForgetPassword }) {
   const [validateOtp, changeValidateOtp] = useState(false);
   const [changedPassword, isChangedPassword] = useState(false);
 
-//   function for handling the user states of email otp and password
+  //   function for handling the user states of email otp and password
   const inputHandler = (e) => {
     setUser((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
-//   function for sending OTP to mail
+  //   function for sending OTP to mail
   const sendEmail = async (e) => {
     e.preventDefault();
     let res = null;
@@ -41,7 +41,7 @@ function ForgetPassword({ changeForgetPassword }) {
       console.log(err);
     }
   };
-//   function for validating whether it's the right OTP or not
+  //   function for validating whether it's the right OTP or not
   const validateOtpFun = async (e) => {
     e.preventDefault();
     let res = null;
@@ -61,7 +61,7 @@ function ForgetPassword({ changeForgetPassword }) {
       console.log(err);
     }
   };
-//   function for setting in the new password
+  //   function for setting in the new password
   const passwordHandler = async (e) => {
     e.preventDefault();
     let res = null;
@@ -132,7 +132,7 @@ function ForgetPassword({ changeForgetPassword }) {
         {changedPassword && (
           <>
             <label htmlFor="password" className={styles.label}>
-              OTP
+              New Password
               <input
                 type="password"
                 name="password"
