@@ -1,0 +1,36 @@
+.todo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+    margin: 2rem;
+    background-color: #2B4865;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.checkboxArea{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.checkboxArea > h2,p{
+    margin: 0px 2rem;
+}
+
+.checkboxArea > input{
+    cursor: pointer;
+    accent-color: #E94560;
+    height: 20px;
+    width: 20px;
+}
+
+.todo_status{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

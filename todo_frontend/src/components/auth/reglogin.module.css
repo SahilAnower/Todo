@@ -1,0 +1,30 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label{
+    display: block;
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.label > input{
+    width: 100%;
+    border: none !important;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    outline: none;
+    margin-top: 5px;
+    transition: 0.6s;
+}
+
+.label > input:focus{
+    outline: 2px solid #E94560 !important;
+}
