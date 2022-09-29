@@ -38,8 +38,6 @@ app.use("/", authRoutes);
 app.use("/user", checkAuth, userRoutes);
 app.use("/user/todo", checkAuth, todoRoutes);
 
-app.get("/", (req, res) => res.send(`Server up and running on Port ${PORT}`));
-
 app.use((err, req, res, next) => {
   const status = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
