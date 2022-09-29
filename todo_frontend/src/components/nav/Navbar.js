@@ -23,7 +23,9 @@ function Navbar() {
 
   const getUserInfo = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8000/user");
+      const { data } = await axios.get(
+        "https://todo-mern-daily-app.herokuapp.com/user"
+      );
       setUser(data);
     } catch (err) {
       console.log(err);
@@ -32,7 +34,9 @@ function Navbar() {
 
   const handleLogout = async () => {
     try {
-      const temp = await axios.get("http://localhost:8000/logout");
+      const temp = await axios.get(
+        "https://todo-mern-daily-app.herokuapp.com/logout"
+      );
       setUser(null);
       navigate("/");
       toast.success("User Logged Out Successfully");

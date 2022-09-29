@@ -32,7 +32,10 @@ function Todolist() {
       return;
     }
     try {
-      const {data} = await axios.post("http://localhost:8000/user/todo", newTodo);
+      const { data } = await axios.post(
+        "https://todo-mern-daily-app.herokuapp.com/user/todo",
+        newTodo
+      );
       toast.success("New Todo is Created");
       setIsAddingNew(false);
       setNewTodo({
@@ -47,7 +50,9 @@ function Todolist() {
 
   const getTasks = async () => {
     try {
-      const data  = await axios.get("http://localhost:8000/user/todo/me");
+      const data = await axios.get(
+        "https://todo-mern-daily-app.herokuapp.com/user/todo/me"
+      );
       setTodoList(data.data);
     } catch (err) {
       console.log(err);
@@ -56,7 +61,9 @@ function Todolist() {
 
   const deleteHandler = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/user/todo/${id}`);
+      await axios.delete(
+        `https://todo-mern-daily-app.herokuapp.com/user/todo/${id}`
+      );
       toast.success("Todo Successfully Deleted");
       setTodoList(todoList.filter((todo) => todo._id !== id));
     } catch (err) {

@@ -28,9 +28,12 @@ function ForgetPassword({ changeForgetPassword }) {
     e.preventDefault();
     let res = null;
     try {
-      res = await axios.post("http://localhost:8000/email_send", {
-        email: user.email,
-      });
+      res = await axios.post(
+        "https://todo-mern-daily-app.herokuapp.com/email_send",
+        {
+          email: user.email,
+        }
+      );
       if (res.data.statusText === "Success") {
         toast.success(res.data.message);
         changeValidateOtp(true);
@@ -46,10 +49,13 @@ function ForgetPassword({ changeForgetPassword }) {
     e.preventDefault();
     let res = null;
     try {
-      res = await axios.post("http://localhost:8000/validate_otp", {
-        email: user.email,
-        otpCode: user.otpCode,
-      });
+      res = await axios.post(
+        "https://todo-mern-daily-app.herokuapp.com/validate_otp",
+        {
+          email: user.email,
+          otpCode: user.otpCode,
+        }
+      );
       if (res.data.statusText === "Success") {
         toast.success(res.data.message);
         isChangedPassword(true);
@@ -66,10 +72,13 @@ function ForgetPassword({ changeForgetPassword }) {
     e.preventDefault();
     let res = null;
     try {
-      res = await axios.post("http://localhost:8000/change_password", {
-        email: user.email,
-        password: user.password,
-      });
+      res = await axios.post(
+        "https://todo-mern-daily-app.herokuapp.com/change_password",
+        {
+          email: user.email,
+          password: user.password,
+        }
+      );
       if (res.data.statusText === "Success") {
         toast.success(res.data.message);
         setUser({

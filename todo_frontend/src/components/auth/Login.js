@@ -39,7 +39,7 @@ function Login({ toggleHandler }) {
   const login = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/login", user);
+      await axios.post("https://todo-mern-daily-app.herokuapp.com/login", user);
       await verifyAuth();
       navigate("/");
       toast.success("Login Successful");
@@ -57,7 +57,7 @@ function Login({ toggleHandler }) {
   return (
     <>
       {isForgetPassword ? (
-        <ForgetPassword changeForgetPassword={changeForgetPassword}/>
+        <ForgetPassword changeForgetPassword={changeForgetPassword} />
       ) : (
         <div>
           <h1>Login</h1>
@@ -85,7 +85,11 @@ function Login({ toggleHandler }) {
               />
             </label>
             <Button type="submit" text="Login" />
-            <Button type="button" text="Forgot Password?" onClick={()=> changeForgetPassword()}/>
+            <Button
+              type="button"
+              text="Forgot Password?"
+              onClick={() => changeForgetPassword()}
+            />
             <Button
               type="button"
               text="🔀Need an Account? SignUp!"

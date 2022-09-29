@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { createContext, useEffect, useState } from 'react';
+import axios from "axios";
+import { createContext, useEffect, useState } from "react";
 
 const AuthContext = createContext({});
 
@@ -7,7 +7,9 @@ export function AuthProvider({ children }) {
   const [auth, setAuth] = useState(undefined);
 
   const verifyAuth = async () => {
-    const isLoggedIn = await axios.get(`http://localhost:8000/is_logged_in`);
+    const isLoggedIn = await axios.get(
+      `https://todo-mern-daily-app.herokuapp.com/is_logged_in`
+    );
     setAuth(isLoggedIn.data);
     return isLoggedIn.data;
   };
